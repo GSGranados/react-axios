@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React , {Component} from "react";
+import "./App.css";
+import User from "./Components/User/User";
+class App extends Component {
+  
+   getUser = (e) => {
+    e.preventDefault();
+    const user= e.target.elements.username.value;
+    console.log(user);
+  }
+  render(){
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1 className="tittle">HTTP calls in React</h1>
       </header>
+
+      <User getUser = {this.getUser}></User>
     </div>
   );
+}
 }
 
 export default App;
